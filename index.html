@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain</title>
+    <link rel="stylesheet" type="text/css" href="./rain.css">
+    <script src="./rain.js" defer></script>
+</head>
+<body">
+<div id="cloud1"></div><!--Grubeli-->
+<div id="cloud2"></div>
+<div id="cloud3"></div>
+<div id="lightning"></div><!--Elva-->
+<canvas id="canvas"></canvas><!--Wvima-->
+
+<svg width="0" height="0"> 
+    <!-- Back Layer -->
+    <filter id="filter-back">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" />
+        <feDisplacementMap  in="SourceGraphic" scale="170" />
+      </filter>
+      <!-- Middle Layer -->
+      <filter id="filter-mid">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" />
+        <feDisplacementMap  in="SourceGraphic" scale="150" />
+      </filter>
+      <!-- Front Layer -->
+      <filter id="filter-front">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" />
+        <feDisplacementMap  in="SourceGraphic" scale="100" />
+      </filter>
+  </svg>
+</body>
+</html>
